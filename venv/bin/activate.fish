@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/b/Desktop/jobsity-bot/venv"
+set -gx VIRTUAL_ENV "/Users/b/Documents/GitHub/jobsity-chat-bot/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

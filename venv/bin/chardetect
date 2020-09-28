@@ -1,4 +1,4 @@
-#!/Users/b/Desktop/jobsity-bot/venv/bin/python3
+#!/Users/b/Documents/GitHub/jobsity-chat-bot/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
