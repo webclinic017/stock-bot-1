@@ -1,5 +1,11 @@
 import os, sys, pika, requests, csv
 
+
+# Stock bot callback function that consumed the jobs from the stock-query
+# RabbitMQ queu. It takes a string containing a stock code and a room name
+# with that it downloads and parses the csv of that stock from an external
+# api to then hit the chat api to send a messahe with the stock quote.
+
 def callback(ch, method, properties, body):
     data = body.decode("utf-8") 
     stock_code=data.split("|")[0]
