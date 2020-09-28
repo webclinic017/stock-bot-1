@@ -16,8 +16,11 @@ def callback(ch, method, properties, body):
             else:
                 requests.post('http://localhost:5000/message', json={"message":"{} quote is ${}".format(stock_code.upper(),quote),"room": room,"username":"StockBot","secret":"jobsitystockbotkey"})
     except:
-        requests.post('http://localhost:5000/message', json={"message":"Error while fetching stock prices","room": room,"username":"StockBot","secret":"jobsitystockbotkey"})
-
+        try:
+            requests.post('http://localhost:5000/message', json={"message":"Error while fetching stock prices","room": room,"username":"StockBot","secret":"jobsitystockbotkey"})
+        except:
+            pass
+        
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
 channel.queue_declare(queue='stock-query')
